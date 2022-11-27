@@ -26,6 +26,7 @@ $brand-google: #ea4335 !default;
 $brand-facebook: #3b5998 !default;
 
 
+
 // SideBar
 .page{
   width: 100%;
@@ -33,30 +34,45 @@ $brand-facebook: #3b5998 !default;
 }
 
 .sidebarpannel{
-  width: 40%;
+  width: 100%;
   display: flex;
 }
-.channelpannel{
-  width: 60%;
+.chatchannel{
   display: flex;
+  flex-direction: column;
+width: 100%;
+
 }
 
 .sidemenu{
-  background: #0573B7;;
+  background: #0573B7;
   color: #fff;
   height: 100vh;
-  width: 10%;
   transition: all 0.5s;
+  
   
 }
 
 .sidecontent{
-  width: 60%;
+  width: 25%;
   height: 100vh;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-right:2px solid #f8f8f8;
+
 }
 
 
+.contentlist{
+  height: 75%;
+
+}
+
+.profile-section--3{
+  width:100%;
+  height: 10%;
+}
 
 .top_section{
   display: flex;
@@ -79,16 +95,45 @@ $brand-facebook: #3b5998 !default;
   gap: 15px;
   transition: all 0.5s;
   text-decoration: none;
+  align-items: center;
 }
 .link:hover{
-  background:white;
+  background: lightskyblue;
   color: #000;
   transition: all 0.5s;
 }
-.active{
+
+.link-listchannel{
+
+  display: flex;
+  color: #fff;
+  padding: 20px 10px;
+  gap: 15px;
+  transition: all 0.5s;
+  text-decoration: none;
+  align-items: center;
+}
+
+.link-listchannel:hover{
   background: lightskyblue;
   color: #000;
+  transition: all 0.5s;
 }
+
+
+.active-listchannel{
+  background: red;
+  color: #000;
+}
+
+
+.active{
+  background: white;
+  color: #000;
+}
+
+
+
 
 
 .link_text{
@@ -144,6 +189,7 @@ html, body {
 
       .item {
         border-bottom: 1px solid $gray-700;
+
       }
     }
   }
@@ -157,17 +203,46 @@ html, body {
   height: 100%;;
 }
 
+
+.search-and-add-container{
+  width: 100%;
+  height:15%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.btn-add {
+ 
+  background-color:  #EFF4FE;
+  color:  #0573B7;
+  padding: 4% 15%;
+  text-align: center;
+  border-radius: 20%;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2vw;
+  vertical-align: center;
+
+
+}
+
+
 .chat-search-box {
     -webkit-border-radius: 3px 0 0 0;
     -moz-border-radius: 3px 0 0 0;
     border-radius: 3px 0 0 0;
     padding: .75rem 1rem;
+    width: 80%;
+}
+.add-chat{
+  width: 20%;
 }
 
+
 .chat-search-box .input-group .form-control {
-    -webkit-border-radius: 2px 0 0 2px;
-    -moz-border-radius: 2px 0 0 2px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: transparent;
     background-color:  #EFF4FE;
    
@@ -330,6 +405,14 @@ html, body {
     flex-direction: column;
 }
 
+.center{
+
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 /************************************************
 	************************************************
 											Users
@@ -337,19 +420,24 @@ html, body {
 ************************************************/
 .items {
   padding: 0;
+
 }
 
 .items .item {
-  position: relative;
-  width: 100%;
-  padding: 10px 1rem;
+ display: flex;
+ align-items: baseline; //middle alignment of text when flexed
+  text-decoration: none;
+  padding: 1em;
   cursor: pointer;
   border-bottom: 1px solid #f0f4f8;
 }
 
-.items .item.active-item, .item:hover {
-  background-color: #c7e6ff;
+.items .item.item-active{
+  background-color:  #c1e7ff;
+}
 
+.item:hover {
+  background-color: #c7e6ff;
 }
 
 .items .person:last-child {
@@ -406,12 +494,13 @@ html, body {
   font-weight: 600;
   font-size: .85rem;
   display: inline-block;
+  text-align: center;
 }
 
 .items .item p.name-time .time {
   font-weight: 400;
   font-size: .7rem;
-  text-align: right;
+  text-align: center;
   color: #8796af;
 }
 
@@ -442,9 +531,10 @@ html, body {
 
 .chat-container {
     position: relative;
-    padding: 1rem;
+    padding: 2rem;
     overflow-y: auto;
     height: 70%;
+    width: 100%;
 }
 
 .chat-input {
@@ -494,7 +584,7 @@ html, body {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    background: #ffffff;
+    background: lightskyblue;
     font-weight: 300;
     line-height: 150%;
     position: relative;
@@ -624,17 +714,27 @@ ul {
 ************************************************/
 .profile-container{
   display: flex;
-  margin: 5%;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10%;
+  margin-left:5%;
+  align-items: center;
+  width: 100%;
+
 }
 .profile-avatar-container{
   width: 20%;
 
 }
 .profile-details-container{
-  width: 80%;
+  width: 60%;
+  margin-left: 5%;
 
 }
-
+.profile-settings{
+  width: 50%;
+  font-size: 1.5em;
+}
 .avatar-profile {
   height: 60px;
   width: 60px;

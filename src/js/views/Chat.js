@@ -12,7 +12,8 @@ import {withBaseLayout} from '../layouts/Base';
 
 import { subscribeToChat, subscribeToProfile } from '../actions/chats'; 
 
-function Chat() {
+export default function Chat() {
+
     const { id } = useParams();
     const peopleWatchers = useRef({}); //reserve val between renderers
     const dispatch = useDispatch();
@@ -46,17 +47,12 @@ function Chat() {
     }
 
 
-    return (     
-          <div className="row no-gutters fh">
-            <div className="col-3 fh">
-            <ChatUserList users={activeChat?.joinedUsers}/>
-            </div>
-            <div className="col-9 fh">
+    return (          
+            <div className='chatchannel'>
             <ViewTitle text={`${activeChat?.name}`}/>
             <ChatMessagesList/>
-            </div>
-          </div>       
+            </div>     
       )
     }
 
-export default withBaseLayout(Chat, {canGoBack: true});
+
