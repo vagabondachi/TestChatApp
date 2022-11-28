@@ -1,10 +1,10 @@
-import { Stack } from "@mui/material";
 import React from "react";
-import GeneralApp from "../../dashboard/GeneralApp";
+import { useTheme, styled } from '@mui/material/styles';
+import { Stack } from "@mui/material";
 import SideNav from "./SideNav";
 
 const DashboardLayout = () => {
-
+ const theme = useTheme();
   return (
     <>
       <Stack direction="row">

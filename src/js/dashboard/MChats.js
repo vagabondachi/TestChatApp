@@ -176,7 +176,7 @@ const MChats = () => {
         <Stack 
         spacing={2}
         direction="column" 
-        sx={{ flexGrow: 1, overflow: "scroll", height: "100%"}}>
+        sx={{ flexGrow: 1, overflowY: "scroll", height: "100%"}}>
 
 
           {/* Scrollbar*/}

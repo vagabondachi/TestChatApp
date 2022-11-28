@@ -22,6 +22,7 @@
     "electron": "^21.2.3",
     "firebase": "^8.10.1",
     "loader": "^2.1.1",
+    "prop-types": "^15.8.1",
     "reac": "^0.0.0",
     "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
@@ -40,6 +41,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
+    "@faker-js/faker": "^7.6.0",
     "dotenv-webpack": "^8.0.1",
     "electron-reload": "^2.0.0-alpha.1"
   }
