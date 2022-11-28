@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, Stack, IconButton, InputAdornment, TextField } from '@mui/material'
 import { styled, useTheme } from '@mui/material/styles';
-import data from "@emoji-mart/data";
-import Picker from "@emoji-mart/react";
+import data from '@emoji-mart/data';
+import Picker from '@emoji-mart/react';
 
 import {
     RiLinksFill,
@@ -95,5 +95,5 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default Footer;
 
