@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Box, Stack, IconButton, InputAdornment, TextField } from '@mui/material'
 import { styled, useTheme } from '@mui/material/styles';
 import data from '@emoji-mart/data';
@@ -23,7 +23,7 @@ const StyledInput = styled(TextField)(({ theme }) => ({
 
 
 
-const ChatInput = () => {
+const ChatInput = ({setOpenPicker}) => {
 return(  
     <StyledInput fullWidth placeholder='Write a message...dont be shy' variant='filled'
     InputProps={{
@@ -38,7 +38,7 @@ return(
         endAdornment: (<InputAdornment>{
 
             <IconButton>
-                <RiEmotionHappyLine />
+                <RiEmotionHappyLine onClick={() => {setOpenPicker((prev) => !prev)}}/>
             </IconButton>
 
         },
@@ -58,6 +58,7 @@ return(
 
 const Footer = () => {
     const theme = useTheme();
+    const [openPicker, setOpenPicker] = useState(false);
     return (
         <Box
             p={2}
@@ -72,13 +73,20 @@ const Footer = () => {
                 spacing={3}>
 
                 {/* ChatInput */}
-                <Stack>
+                <Stack sx={{width: "100%"}}>
+                    <Box sx={{
+                        display : openPicker ? "inline"  : "none", 
+                        zIndex:10, position: "fixed", 
+                        bottom: 81, 
+                        right:100}}>
                 <Picker
                 theme={theme.palette.mode}
                 data={data}
                 onEmojiSelect={console.log}
               />
-                    <ChatInput />
+               </Box>
+                    <ChatInput setOpenPicker={setOpenPicker}/>
+                   
                 </Stack>
 
 
