@@ -13,10 +13,8 @@ import { listenToAuthChanges } from './actions/auth';
 import { listenToConnectionChanges } from './actions/app';
 import { checkUserConnection } from './actions/connection';
 
-import HomeView from './layouts/dashboard/SideNav';
-import ChatCreate from './views/ChatCreate';
+
 import WelcomeView from './views/Welcome';
-import SettingsView from './views/Settings';
 import LoadingView from './components/shared/LoadingView';
 import DashboardLayout from './layouts/dashboard';
 

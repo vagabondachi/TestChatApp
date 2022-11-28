@@ -19,7 +19,6 @@ const DashboardLayout = () => {
   const user = useSelector(({ auth }) => auth.user)
   const theme = useTheme();
   const [selected, setSelected] = useState(0);
-  console.log(theme);
   const { onToggleMode } = useSettings();
 
   return (
@@ -48,18 +47,22 @@ const DashboardLayout = () => {
           >
             {/* Stack for logo and icons only */}
 
-            <Stack alignItems={"center"} spacing={4}>
+            <Stack 
+            alignItems="center" 
+            
+            spacing={4}>
 
               {/* background container for Logo */}
-              <Box p={2} sx={{
-                backgroundColor: theme.palette.primary.main,
+              <Box p={1} 
+          
+              sx={{
                 height: 64,
                 width: 64,
                 borderRadius: 1.5,
               }}
               >
                 {/* Logo */}
-                <img src='C:/Users/pearl/OneDrive/Desktop/Weedle/assets/images/smallweedle.png' alt="chat logo" />
+                <img src='C:\Users\pearl\OneDrive\Desktop\Weedle\public\blue.png' alt="chat logo" />
               </Box>
 
               {/* Stack for icons   */}

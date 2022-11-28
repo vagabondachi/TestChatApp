@@ -8,7 +8,7 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 1200,
     height: 800,
-    icon: 'C:/Users/pearl/OneDrive/Desktop/Weedle/assets/images/logo.ico',
+    icon: 'C:/Users/pearl/OneDrive/Desktop/Weedle/public/logo.ico',
     backgroundColor: "white",
     webPreferences: {
       nodeIntegration: false,
