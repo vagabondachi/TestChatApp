@@ -3,8 +3,29 @@ import { faker } from "@faker-js/faker";
 import {
   RiStarSmileFill,
   RiTeamFill,
-  RiGamepadFill
+  RiGamepadFill,
+  RiLogoutBoxRLine,
+  RiUser3Line,
+  RiSettings2Line,
 } from "react-icons/ri";
+
+
+const Profile_Menu = [
+  {
+    title: "Profile",
+    icon: <RiUser3Line />,
+  },
+  {
+    title: "Settings",
+    icon: <RiSettings2Line />,
+  },
+  {
+    title: "Profile",
+    icon: <RiLogoutBoxRLine />,
+  },
+];
+
+
 
 const Nav_Buttons = [
   {
@@ -174,12 +195,33 @@ const Chat_History = [
   },
 ];
 
+const Message_options = [
+  {
+    title: "Reply",
+  },
+  {
+    title: "React to message",
+  },
+  {
+    title: "Forward message",
+  },
+  {
+    title: "Star message",
+  },
+  {
+    title: "Report",
+  },
+  {
+    title: "Delete Message",
+  },
+];
 
 
 export {
-
+  Profile_Menu,
   Nav_Buttons,
   ChatList,
-  Chat_History
+  Chat_History,
+  Message_options
 
 };

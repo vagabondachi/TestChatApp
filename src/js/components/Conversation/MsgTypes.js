@@ -1,54 +1,57 @@
 import React from 'react'
-import { Box, Divider, Stack, Typography, Link, IconButton } from '@mui/material'
+import { Box, Divider, Stack, Typography, Link, IconButton, Menu, MenuItem } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
 import {
     RiImage2Line,
-    RiDownloadLine
-  } from "react-icons/ri";
+    RiDownloadLine,
+    RiMore2Fill
+} from "react-icons/ri";
+import { Message_options } from '../../data';
 
 
 
-const DocMsg = ({el}) => {
+const DocMsg = ({ el }) => {
     const theme = useTheme();
-  return (
-    <Stack
-    direction="row"
-    justifyContent={el.incoming
-        ? "start" : "end"}>
+    return (
+        <Stack
+            direction="row"
+            justifyContent={el.incoming
+                ? "start" : "end"}>
 
-    <Box
-        p={1.5}
-        sx={{
-            backgroundColor: el.incoming
-                ? theme.palette.background.default
-                : theme.palette.primary.main,
-            borderRadius: 1.5,
-            width: "max-content"
-        }}>
-
-            <Stack spacing={2}>
-                <Stack 
-                p={2}
-                spacing={3}
-                alignItems="center"
-                direction="row" 
+            <Box
+                p={1.5}
                 sx={{
-                    backgroundColor: theme.palette.background.paper,
-                    borderRadius: 1
+                    backgroundColor: el.incoming
+                        ? theme.palette.background.default
+                        : theme.palette.primary.main,
+                    borderRadius: 1.5,
+                    width: "max-content"
                 }}>
-                  <RiImage2Line size={48}/>
-                  <Typography variant="caption"> Abstract.png</Typography>
-            <IconButton>
-                <RiDownloadLine/>
-                </IconButton>
-            </Stack>
-            <Typography 
-            variant="body2"
-            sx={{color: el.incoming ? theme.palette.text : "#fff"}}>{el.message}</Typography>
-            </Stack>
+
+                <Stack spacing={2}>
+                    <Stack
+                        p={2}
+                        spacing={3}
+                        alignItems="center"
+                        direction="row"
+                        sx={{
+                            backgroundColor: theme.palette.background.paper,
+                            borderRadius: 1
+                        }}>
+                        <RiImage2Line size={48} />
+                        <Typography variant="caption"> Abstract.png</Typography>
+                        <IconButton>
+                            <RiDownloadLine />
+                        </IconButton>
+                    </Stack>
+                    <Typography
+                        variant="body2"
+                        sx={{ color: el.incoming ? theme.palette.text : "#fff" }}>{el.message}</Typography>
+                </Stack>
             </Box>
-            </Stack>
-  )
+            < MessageOptions />
+        </Stack>
+    )
 }
 
 
@@ -108,6 +111,7 @@ const LinkMsg = ({ el }) => {
                     </Stack>
                 </Stack>
             </Box>
+            < MessageOptions />
         </Stack>
     )
 }
@@ -152,6 +156,7 @@ const ReplyMsg = ({ el }) => {
                     </Typography>
                 </Stack>
             </Box>
+            < MessageOptions />
         </Stack>
     )
 }
@@ -196,6 +201,7 @@ const MediaMsg = ({ el }) => {
 
                 </Stack>
             </Box>
+            < MessageOptions />
         </Stack>
     )
 }
@@ -222,9 +228,7 @@ const TextMsg = ({ el }) => {
                     {el.message}
                 </Typography>
             </Box>
-
-
-
+            < MessageOptions />
         </Stack>
     )
 
@@ -240,9 +244,47 @@ const Timeline = ({ el }) => {
         <Typography variant="caption" sx={{ color: theme.palette.text }}>{el.text}</Typography>
         <Divider width="46%" />
     </Stack>
+}
 
+const MessageOptions = () => {
 
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+    return (
+        <>
+            <RiMore2Fill
+                id="basic-button"
+                aria-controls={open ? "basic-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick} />
+            <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                    'aria-labelledby': 'basic-button'
+                }}
+            >
+                <Stack
+                    spacing={1}
+                    px={1}
+                >
+                    {Message_options.map((el) => (
+                        <MenuItem onClick={handleClick}>{el.title}</MenuItem>
+                    ))}
+                </Stack>
+            </Menu>
+        </>
 
+    )
 }
 
 export { Timeline, TextMsg, MediaMsg, ReplyMsg, LinkMsg, DocMsg };

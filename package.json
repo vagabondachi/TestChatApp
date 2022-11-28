@@ -46,6 +46,7 @@
     "@babel/core": "^7.20.2",
     "@faker-js/faker": "^7.6.0",
     "dotenv-webpack": "^8.0.1",
-    "electron-reload": "^2.0.0-alpha.1"
+    "electron-reload": "^2.0.0-alpha.1",
+    "file-loader": "^6.2.0"
   }
 }

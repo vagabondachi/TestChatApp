@@ -23,6 +23,10 @@ const GeneralApp = () => {
 {/* Conversation */}
 <Conversation/>
   </Box>
+
+{/* Contact */}
+
+
 </Stack> 
   )
 }
