@@ -9,7 +9,7 @@ import {
 
 import { styled, alpha } from '@mui/material/styles';
 import { ChatList } from "../data";
-import { SimpleBarStyle } from "../components/Scrollbar";
+import { SimpleBarStyle } from "../components/settings/Scrollbar";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {

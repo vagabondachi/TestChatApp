@@ -18,8 +18,6 @@ import WelcomeView from './views/Welcome';
 import LoadingView from './components/shared/LoadingView';
 import DashboardLayout from './layouts/dashboard';
 
-
-
 function AuthRoute({ children, ...rest }) {
   const user = useSelector(({ auth }) => auth.user)
   const onlyChild = React.Children.only(children);
@@ -82,15 +80,15 @@ function ChatApp() {
           <DashboardLayout />
         </AuthRoute>
 
-      </Switch>
 
+      </Switch>
     </Router>
   )
 }
 
 export default function App() {
   return (
-    <StoreProvider>
+    <StoreProvider> 
       <ChatApp />
     </StoreProvider>
   )

@@ -3,7 +3,7 @@ import { Avatar, Box, Divider, IconButton, Stack, Menu, MenuItem } from "@mui/ma
 import { useTheme } from '@mui/material/styles';
 import { Nav_Buttons, Profile_Menu } from '../../data';
 import { useSelector } from 'react-redux';
-import MaterialUISwitch from '../../components/MaterialUISwitch';
+import MaterialUISwitch from '../../components/settings/MaterialUISwitch';
 
 import {
   RiSettings2Fill

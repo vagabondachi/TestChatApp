@@ -1,17 +1,20 @@
 import React from 'react'
 import { Avatar, Box, Stack,  Typography, IconButton, Divider, } from '@mui/material'
 import { useTheme } from '@mui/material/styles';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
     RiSwordFill,
     RiArrowDownSLine,
 } from "react-icons/ri";
-import StyledBadge from '../StyleBadge';
+
+import StyledBadge from '../settings/StyleBadge';
+import { ToggleSidebar } from '../../redux/slices/app';
 
 
 const Header = () => {
     const theme = useTheme();
+    const dispatch = useDispatch();
     const user = useSelector(({ auth }) => auth.user)
   return (
   
@@ -34,8 +37,15 @@ sx={{
         height: "100%"
     }}>
 
+{/* Tiggers the sidebar component of the conversation */}
 
-    <Stack direction={"row"} spacing={2}>
+    <Stack onClick={() => {
+        dispatch(ToggleSidebar());        
+    }}
+    direction={"row"} spacing={2}>
+
+
+
         <Box>
            <StyledBadge
                 overlap="circular"
