@@ -4,11 +4,11 @@ import Conversation from '../components/Conversation';
 import MChats from './MChats';
 import {useTheme} from '@mui/material/styles';
 import Contact from '../components/settings/Contact';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 const GeneralApp = () => {
   const theme = useTheme();
-  const {sidebar} = useSelector((store) => store.app);  
+  // const {sidebar} = useSelector((store) => store.app);  
   return (
 <Stack direction={"row"} sx={{width: "100%"}}>
 
@@ -17,7 +17,7 @@ const GeneralApp = () => {
   <Box 
   sx={{
     height: "100%",
-    width: sidebar.open ? "calc(100vw - 740px)" : "calc(100vw - 420px)" ,
+    width: "calc(100vw - 430px)" ,
     backgroundColor: 
     theme.palette.mode === "light" 
     ? "#F0F4FA" 
@@ -28,9 +28,8 @@ const GeneralApp = () => {
   </Box>
 
 {/* Contact */}
-{sidebar.open &&
-<Contact/>
-}
+{/* <Contact/> */}
+
 </Stack> 
   )
 }

@@ -20,7 +20,7 @@ const Profile_Menu = [
     icon: <RiSettings2Line />,
   },
   {
-    title: "Profile",
+    title: "Logout",
     icon: <RiLogoutBoxRLine />,
   },
 ];
@@ -206,7 +206,7 @@ const Message_options = [
     title: "Forward message",
   },
   {
-    title: "Star message",
+    title: "Pin message",
   },
   {
     title: "Report",

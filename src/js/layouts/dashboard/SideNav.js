@@ -106,7 +106,7 @@ const SideBar = () => {
                       sx=
                       {{
                         width: "max-content",
-                        color: "#000"
+                        color: "#34485E"
                       }}
                       key={el.index}
                     >
@@ -136,7 +136,7 @@ const SideBar = () => {
                   }}
                     sx={{
                       width: "max-content",
-                      color: "#000"
+                      color: "#34485E"
                     }}
                   >
                     <RiSettings2Fill />
